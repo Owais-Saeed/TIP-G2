@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" > 
-  <meta name="description" content="TIP">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="" rel="stylesheet" type="text/css">
-  <link href="" rel="icon" type="image/jpg">
-  <title>Tutor Homepage</title> 
+    <meta charset="utf-8" > 
+    <meta name="description" content="TIP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="" rel="stylesheet" type="text/css">
+    <link href="" rel="icon" type="image/jpg">
+    <title>Tutor Homepage</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<!--Vertical menu bar
-https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
+    
 <header>
-    <p id="cp_name">Instatute</p>
-    <ul class="navbar">    
+        <nav class="p-3 text-bg-dark">
+            <div class="container-fluid">
+                
+                <h1 id="cp_name">Instatute</h1>
+                
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg" aria-label="Tenth navbar example">
+        <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="sindex.php">Create Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">View grades</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    
+
+    <!-- <ul class="navbar">    
         <li><a href="index.php">Create Quiz</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="grade.html">View grades</a></li> <!--a list of students and grades, categorized by each subject tutors teach-->
-    </ul>
+        <li><a href="grade.html">View grades</a></li> //a list of students and grades, categorized by each subject tutors teach
+    </ul> -->
 </header>
 
 <?php

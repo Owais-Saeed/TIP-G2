@@ -105,26 +105,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" > 
-  <meta name="description" content="TIP">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="" rel="stylesheet" type="text/css">
-  <link href="" rel="icon" type="image/jpg">
-  <title>Create A Quiz!</title> 
+    <meta charset="utf-8" > 
+    <meta name="description" content="TIP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="" rel="stylesheet" type="text/css">
+    <link href="" rel="icon" type="image/jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        div.question_options {
+        line-height: 1.6;
+        }
+        </style>
+    <title>Create A Quiz!</title> 
 </head>
 <body>
 <!--Vertical menu bar
 https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
 <header>
-    <p id="cp_name">Instatute</p>
+    <nav class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <h1 id="cp_name">Instatute</h1>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg" aria-label="Tenth navbar example">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sindex.php">Create Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Leaderboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">View grades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <p id="cp_name">Instatute</p>
     <ul class="navbar">    
         <li><a href="index.html">Create Quiz</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="grade.html">View grades</a></li> <!--a list of students and grades, categorized by each subject tutors teach-->
-    </ul>
+        <li><a href="grade.html">View grades</a></li> //a list of students and grades, categorized by each subject tutors teach
+    </ul> -->
 </header>
 <!--Container-->
 <div class="container">
@@ -134,6 +168,7 @@ https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
     <div id="quiz_container">
         <h1>Create Quiz</h1>
         <div class="question_options">
+            <h2>Q 1</h2>
             <label for="question_1">Question 1: </label>
             <input id="question_1" class="question" type="text" name="question_1" required="required">
             <br>
@@ -155,6 +190,7 @@ https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
             <input class="checkbox" type="radio" name="correct_option_1" value="D" required="required">
         </div>
 		<div class="question_options">
+            <h2>Q 2</h2>
             <label for="question_2">Question 2: </label>
             <input id="question_2" class="question" type="text" name="question_2" required="required">
             <br>
@@ -176,6 +212,7 @@ https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
             <input class="checkbox" type="radio" name="correct_option_2" value="D" required="required">
         </div>
 		<div class="question_options">
+            <h2>Q 3</h2>
             <label for="question_3">Question 3: </label>
             <input id="question_3" class="question" type="text" name="question_3" required="required">
             <br>
@@ -197,6 +234,7 @@ https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
             <input class="checkbox" type="radio" name="correct_option_3" value="D" required="required">
         </div>
 		<div class="question_options">
+            <h2>Q 4</h2>
             <label for="question_4">Question 4: </label>
             <input id="question_4" class="question" type="text" name="question_4" required="required">
             <br>
@@ -217,7 +255,8 @@ https://www.w3schools.com/css/css_navbar_vertical.asp: materials-->
             <input id="option_4_D" class="txt_field" type="text" name="option_4_D" required="required">
             <input class="checkbox" type="radio" name="correct_option_4" value="D" required="required">
         </div>
-				<div class="question_options">
+        <div class="question_options">
+            <h2>Q 5</h2>
             <label for="question_5">Question 5: </label>
             <input id="question_5" class="question" type="text" name="question_5" required="required">
             <br>

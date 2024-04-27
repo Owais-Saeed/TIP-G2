@@ -5,8 +5,19 @@
     <meta name="description" content="TIP">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Select Subject</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <header>
+        <nav class="p-3 text-bg-dark">
+            <div class="container-fluid">
+                
+                <h1 id="cp_name">Instatute</h1>
+            
+            </div>
+        </nav>
+    </header>
     <h1>Select Subject</h1>
 
     <form action="student_quiz.php" method="GET">
