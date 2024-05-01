@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </form>
+	<p><a href="registration.php"> Register here</a></p>
 <!--Container-->
 <script src=""></script>
 
