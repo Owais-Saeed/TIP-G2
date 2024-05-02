@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     );
 
     // Replace with your service URL and port
-    $url = 'http://localhost:8080/login_service';
+    $url = 'http://localhost:8080/login';
 
     // Send POST request with JSON data
     $ch = curl_init($url);
@@ -86,29 +86,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
 }
 ?>
-    <main class="form-signin w-100 m-auto">
-        <form id="loginframe" method="post" action="../python/login.py">
-        
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <main class="form-signin w-100 m-auto">
+    <form id="loginframe" method="post" action="javascript:void(0)">  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">User Name</label>
-            </div>
-            <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-            </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">User Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
 
-            <div class="form-check text-start my-3">
-            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Remember me
-            </label>
-            </div>
-            <button class="btn btn-primary w-100 py-2" type="submit">Log in</button>
-        </form>
-</main>
+      <div class="form-check text-start my-3">
+        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Remember me
+        </label>
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="button" id="login-button">Log in</button>
+    </form>
+  </main>
+
+  <script>
+    // Add event listener for login button click
+    document.getElementById('login-button').addEventListener('click', function() {
+      // Get username and password from form fields
+      const username = document.getElementById('floatingInput').value;
+      const password = document.getElementById('floatingPassword').value;
+
+      // Prepare data for JSON request
+      const data = {
+        username: username,
+        password: password
+      };
+
+      // Replace with your service URL and port
+      const url = 'http://localhost:8080/login_service';
+
+      // Send POST request with JSON data using fetch API (or another method)
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Login successful, store user information (potentially using sessionStorage/localStorage)
+          // You can't directly set session variables with Javascript, consider alternative storage or redirection with user information in the URL
+          console.log("Login successful:", data.user);
+          // Redirect based on user role (handle in your server-side code)
+        } else {
+          // Login failed, display error message
+          alert("Invalid username/password");
+        }
+      })
+      .catch(error => {
+        console.error("Error communicating with login service:", error);
+        alert("An error occurred. Please try again later.");
+      });
+    });
+  </script>
 
 <!--Container-->
 <script src=""></script>

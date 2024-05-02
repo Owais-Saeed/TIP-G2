@@ -24,60 +24,8 @@
             </div>
         </nav>
     </header>
-
-    <?php
-
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST['usn'];
-  $password = $_POST['psw'];
-
-  // Prepare data for JSON request
-  $data = array(
-    'username' => $username,
-    'password' => $password
-  );
-
-  // Replace with your service URL and port
-  $url = 'http://localhost:8080/login_service';
-
-  // Send POST request with JSON data
-  $ch = curl_init($url);
-  curl_setopt($ch, CURLOPT_POST, true);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-
-  $response = curl_exec($ch);
-  $curl_error = curl_error($ch);
-  curl_close($ch);
-
-  if ($curl_error) {
-    echo "Error communicating with login service: " . $curl_error;
-  } else {
-    $login_response = json_decode($response, true);
-    
-    if ($login_response['success']) {
-      // Login successful, store user information in session
-      $_SESSION['user_id'] = $login_response['user']['user_id'];
-      $_SESSION['role'] = $login_response['user']['role'];
-
-      // Redirect based on user role
-      if ($_SESSION['role'] == 'student') {
-        header('Location: student_index.php');
-      } elseif ($_SESSION['role'] == 'tutor') {
-        header('Location: tutor_index.php');
-      } else {
-        echo "Invalid role";
-      }
-      exit(); // Stop further execution
-    } else {
-      // Login failed, display error message
-      echo "Invalid username/password";
-?>
     <main class="form-signin w-100 m-auto">
-        <form id="loginframe" method="post" action="../python/login.py">
+        <form id="loginframe" method="post" action="../python/login">
         
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
