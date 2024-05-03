@@ -16,7 +16,13 @@
 </head>
 <body>
 <header>
-    <p id="cp_name">Instatute</p>
+    <nav class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            
+            <h1 id="cp_name">Instatute</h1>
+        
+        </div>
+    </nav>
 </header>
 
 <?php
@@ -84,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </form>
-	<p><a href="registration.php"> Register here</a></p>
+    <p><a href="registration.php"> Register here</a></p>
 <!--Container-->
 <script src=""></script>
 
