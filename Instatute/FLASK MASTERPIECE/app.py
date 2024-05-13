@@ -54,6 +54,8 @@ def login():
                 return redirect(url_for('student_index'))
             elif session['role'] == 'tutor':
                 return redirect(url_for('tutor_index'))
+            elif session['role'] == 'admin':
+                return redirect(url_for('register'))
             else:
                 flash("Invalid role")
                 return render_template('login.html')
@@ -114,7 +116,7 @@ def register():
         cursor.close()
         conn.close()
         flash('Registration successful!')
-        return redirect(url_for('register'))
+        return redirect(url_for('login'))
 
     return render_template('registration.html')
 
