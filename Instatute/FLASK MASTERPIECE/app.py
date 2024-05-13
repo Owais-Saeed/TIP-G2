@@ -451,6 +451,53 @@ def tutor_viewgrades():
 
     return render_template('tutor_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
+#student view grades BLOCK
+
+# Route for the student view grades page
+@app.route('/student_viewgrades', methods=['GET', 'POST'])
+def view_grades():
+    if 'user_id' not in session:
+        flash('Please log in to access this page.')
+        return redirect(url_for('login'))
+
+    user_id = session['user_id']
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    # Fetch subjects for the dropdown
+    cursor.execute("""
+        SELECT DISTINCT s.subject_id, s.subject_name
+        FROM subjects s
+        JOIN enrollment e ON s.subject_id = e.subject_id
+        WHERE e.student_id = %s
+    """, (user_id,))
+    subjects = cursor.fetchall()
+
+    # Get selected subject from GET request
+    selected_subject = request.args.get('subject_id')
+
+    # Build the query for attempts based on selected subject
+    attempts_query = """
+        SELECT a.student_id, q.quiz_name, s.subject_name, a.score
+        FROM attempts a
+        JOIN quiz q ON a.quiz_id = q.quiz_id
+        JOIN subjects s ON q.subject_id = s.subject_id
+        JOIN enrollment e ON s.subject_id = e.subject_id
+        WHERE e.student_id = %s
+    """
+
+    if selected_subject:
+        attempts_query += " AND s.subject_id = %s"
+        cursor.execute(attempts_query, (user_id, selected_subject))
+    else:
+        cursor.execute(attempts_query, (user_id,))
+
+    attempts = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template('student_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
