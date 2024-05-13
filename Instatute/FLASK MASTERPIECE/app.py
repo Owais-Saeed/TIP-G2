@@ -404,6 +404,53 @@ def submit_quiz():
     return redirect(url_for('student_index'))
 
 
+#tutor view grades BLOCK
+
+@app.route('/tutor_viewgrades', methods=['GET'])
+def tutor_viewgrades():
+    if 'user_id' not in session:
+        flash('Please log in to access this page.')
+        return redirect(url_for('login'))
+
+    user_id = session['user_id']
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    # Fetch subjects taught by the tutor
+    cursor.execute("""
+        SELECT DISTINCT s.subject_id, s.subject_name
+        FROM subjects s
+        JOIN teaching t ON s.subject_id = t.subject_id
+        WHERE t.tutor_id = %s
+    """, (user_id,))
+    subjects = cursor.fetchall()
+
+    # Get selected subject from GET request
+    selected_subject = request.args.get('subject_id')
+
+    # Build the query for attempts based on selected subject
+    attempts_query = """
+        SELECT a.student_id, a.quiz_id, q.quiz_name, s.subject_name, a.score
+        FROM attempts a
+        JOIN quiz q ON a.quiz_id = q.quiz_id
+        JOIN subjects s ON q.subject_id = s.subject_id
+        JOIN teaching t ON s.subject_id = t.subject_id
+        WHERE t.tutor_id = %s
+    """
+
+    if selected_subject:
+        attempts_query += " AND s.subject_id = %s"
+        cursor.execute(attempts_query, (user_id, selected_subject))
+    else:
+        cursor.execute(attempts_query, (user_id,))
+
+    attempts = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template('tutor_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
