@@ -524,7 +524,7 @@ def leaderboard():
     return render_template('leaderboard.html', leaderboard=leaderboard)
 
 #Route for student profile
-
+@app.route('/Profile')
 def profile():
     # Check if user is logged in
     if 'user_id' in session:
@@ -550,10 +550,23 @@ def profile():
             cursor.execute("SELECT points_earned FROM students WHERE student_id = %s", (student_id,))
             student_points = cursor.fetchone()
 
+            #For the image
+            cursor.execute("SELECT current_level FROM animals WHERE user_id = %s", (user_id,))
+            current_level = cursor.fetchone()
+            
+            # cursor.execute("SELECT animal_name FROM animals WHERE user_id = %s", (user_id,))
+            # animal_name = cursor.fetchone()
+
+            # image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
+            # image_path = os.path.join(image_dir, f'{animal_name}-{current_level}.png')
+
+            image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
+            image_path = os.path.join(image_dir, f'{current_level}-{current_level}.png')
+
             # Close cursor and connection
             cursor.close()
             conn.close()
-            return render_template('profile.html', student_id, student_firstname, student_lastname, student_points)
+            return render_template('profile.html', student_id, student_firstname, student_lastname, student_points, image_url=image_path)
         else:
             return "Failed to establish connection to the database."
     else:
