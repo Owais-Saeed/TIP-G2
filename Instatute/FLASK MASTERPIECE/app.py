@@ -499,5 +499,29 @@ def view_grades():
 
     return render_template('student_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
+
+#student Leaderboard BLOCK
+
+@app.route('/leaderboard')
+def leaderboard():
+    conn = get_db_connection()
+    if conn is None:
+        flash("Failed to connect to the database.")
+        return render_template('leaderboard.html', leaderboard=[])
+ 
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("""
+        SELECT student_id, SUM(score) AS total_score
+        FROM attempts
+        GROUP BY student_id
+        ORDER BY total_score DESC
+        LIMIT 3
+    """)
+    leaderboard = cursor.fetchall()
+    cursor.close()
+    conn.close()
+ 
+    return render_template('leaderboard.html', leaderboard=leaderboard)
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
