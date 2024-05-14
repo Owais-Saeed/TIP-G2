@@ -523,5 +523,41 @@ def leaderboard():
  
     return render_template('leaderboard.html', leaderboard=leaderboard)
 
+#Route for student profile
+
+def profile():
+    # Check if user is logged in
+    if 'user_id' in session:
+        user_id = session['user_id']
+        conn = get_db_connection()
+        if conn:
+            cursor = conn.cursor(dictionary=True)
+            # Fetch user data
+            cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
+            user = cursor.fetchone()
+            # Fetch student data
+            cursor.execute("SELECT student_id FROM students WHERE user_id = %s", (user_id,))
+            student_id = cursor.fetchone()
+            
+            cursor.execute("SELECT first_name FROM students WHERE student_id = %s", (student_id,))
+            student_firstname = cursor.fetchone()
+            student_id = cursor.fetchone()
+            
+            cursor.execute("SELECT last_name FROM students WHERE student_id = %s", (student_id,))
+            student_lastname = cursor.fetchone()
+            student_id = cursor.fetchone()
+            
+            cursor.execute("SELECT points_earned FROM students WHERE student_id = %s", (student_id,))
+            student_points = cursor.fetchone()
+
+            # Close cursor and connection
+            cursor.close()
+            conn.close()
+            return render_template('profile.html', student_id, student_firstname, student_lastname, student_points)
+        else:
+            return "Failed to establish connection to the database."
+    else:
+        return redirect(url_for('login'))  # Redirect to login page if not logged in
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

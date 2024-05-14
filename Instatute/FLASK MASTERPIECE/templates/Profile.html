@@ -1392,12 +1392,11 @@
         </svg>
 
         <main class="d-flex flex-nowrap">
-            <h1 class="visually-hidden">Sidebars examples</h1>
 
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+            <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;  background-color:#0000A3;">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                    <span class="fs-4">Logo</span>
+                    <span class="fs-4">  </span>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
@@ -1435,12 +1434,12 @@
                 <hr>
             </div>
 
-            <div class="b-example-divider b-example-vr"></div>
+            <div class="b-example-divider b-example-vr" style="background-color:#000036;"></div>
 
             <section class="bg-light">
                 <div class="container">
                     <div class="row">
-                        <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-dark">
+                        <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style=" background-color:#0000A3;">
                             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                               <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                               <span class="fs-4">Logo</span>
@@ -1454,14 +1453,14 @@
                                         <div class="col-lg-6 mb-4 mb-lg-0">
                                             <img src="https://cdn3.vectorstock.com/i/1000x1000/89/27/8-bit-pixel-rat-animals-for-game-assets-vector-46698927.jpg" alt="..." style="width: 60%;">
                                             <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
-                                                <h3 class="h2 text-white mb-0" style="text-align: center;">John mark Doe Kyzer</h3>
+                                                <h3 class="h2 text-white mb-0" style="text-align: center;">{{ student_firstname }} {{ student_lastname }}</h3>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 px-xl-10">
                                             <ul class="list-unstyled mb-1-9">
-                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span> Bingus</li>
-                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Student ID:</span> UwU</li>
-                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Points:</span> 123</li>
+                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span> {{ student_firstname }} {{ student_lastname }}</li>
+                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Student ID:</span> {{ student_id }}</li>
+                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Points:</span> {{ student_points }}</li>
 
                                             </ul>
                                         </div>
@@ -1498,7 +1497,7 @@
                                                             <div class="card-header" style="text-align: center;">Total Points</div>
                                                             <div class="card-body" style="text-align: center;">
                                                                 <div class="form-group">
-                                                                    346
+                                                                    {{ student_points }}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1653,7 +1652,6 @@
                     </div>
                 </div>
             </section>
-            
         </main>
 
         
