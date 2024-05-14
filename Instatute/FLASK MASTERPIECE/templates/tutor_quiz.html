@@ -2,130 +2,324 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create A Quiz!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Reset and General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #0000A3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #0067B3;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar ul li a {
+            font-size: 1.2em;
+        }
+
+        /* Main Section */
+        .main {
+            padding: 50px 0;
+        }
+
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-container h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .question-options {
+            margin-bottom: 30px;
+        }
+
+        .question-options h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .question-options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .question-options input[type="text"] {
+            width: calc(100% - 30px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .question-options .option-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .checkbox {
+            margin-left: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #40B0DF;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #40B0DF;
+        }
+
+        .btn-primary:hover {
+            background-color: #0067B3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0000A3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>Create Quiz for {{ subject }}</h1>
-    <form method="post">
-    <div id="quiz_container">
-        <h1>Create Quiz</h1>
-        <div class="question_options">
-            <h2>Q 1</h2>
-            <label for="question_1">Question 1: </label>
-            <input id="question_1" class="question" type="text" name="question_1" required="required">
-            <br>
-            <!--Option A-->
-            <label for="option_1_A">Option A: </label>
-            <input id="option_1_A" class="txt_field" type="text" name="option_1_A" required="required">
-            <input class="checkbox" type="radio" name="correct_option_1" value="A" required="required">
-            <!--Option B-->
-            <label for="option_1_B">Option B: </label>
-            <input id="option_1_B" class="txt_field" type="text" name="option_1_B" required="required">
-            <input class="checkbox" type="radio" name="correct_option_1" value="B" required="required">
-            <!--Option C-->
-            <label for="option_1_C">Option C: </label>
-            <input id="option_1_C" class="txt_field" type="text" name="option_1_C" required="required">
-            <input class="checkbox" type="radio" name="correct_option_1" value="C" required="required">
-            <!--Option D-->
-            <label for="option_1_D">Option D: </label>
-            <input id="option_1_D" class="txt_field" type="text" name="option_1_D" required="required">
-            <input class="checkbox" type="radio" name="correct_option_1" value="D" required="required">
+    <header>
+        <div class="container">
+            <h1 id="cp_name">Institute</h1>
         </div>
-		<div class="question_options">
-            <h2>Q 2</h2>
-            <label for="question_2">Question 2: </label>
-            <input id="question_2" class="question" type="text" name="question_2" required="required">
-            <br>
-            <!--Option A-->
-            <label for="option_2_A">Option A: </label>
-            <input id="option_2_A" class="txt_field" type="text" name="option_2_A" required="required">
-            <input class="checkbox" type="radio" name="correct_option_2" value="A" required="required">
-            <!--Option B-->
-            <label for="option_2_B">Option B: </label>
-            <input id="option_2_B" class="txt_field" type="text" name="option_2_B" required="required">
-            <input class="checkbox" type="radio" name="correct_option_2" value="B" required="required">
-            <!--Option C-->
-            <label for="option_2_C">Option C: </label>
-            <input id="option_2_C" class="txt_field" type="text" name="option_2_C" required="required">
-            <input class="checkbox" type="radio" name="correct_option_2" value="C" required="required">
-            <!--Option D-->
-            <label for="option_2_D">Option D: </label>
-            <input id="option_2_D" class="txt_field" type="text" name="option_2_D" required="required">
-            <input class="checkbox" type="radio" name="correct_option_2" value="D" required="required">
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="/tutor_index">Homepage</a></li>
+                <li><a href="/tutor_subjects">Create Quiz</a></li>
+                <li><a href="/leaderboard">Leaderboard</a></li>
+                <li><a href="/tutor_viewgrades">View Grades</a></li>
+            </ul>
         </div>
-		<div class="question_options">
-            <h2>Q 3</h2>
-            <label for="question_3">Question 3: </label>
-            <input id="question_3" class="question" type="text" name="question_3" required="required">
-            <br>
-            <!--Option A-->
-            <label for="option_3_A">Option A: </label>
-            <input id="option_3_A" class="txt_field" type="text" name="option_3_A" required="required">
-            <input class="checkbox" type="radio" name="correct_option_3" value="A" required="required">
-            <!--Option B-->
-            <label for="option_3_B">Option B: </label>
-            <input id="option_3_B" class="txt_field" type="text" name="option_3_B" required="required">
-            <input class="checkbox" type="radio" name="correct_option_3" value="B" required="required">
-            <!--Option C-->
-            <label for="option_3_C">Option C: </label>
-            <input id="option_3_C" class="txt_field" type="text" name="option_3_C" required="required">
-            <input class="checkbox" type="radio" name="correct_option_3" value="C" required="required">
-            <!--Option D-->
-            <label for="option_3_D">Option D: </label>
-            <input id="option_3_D" class="txt_field" type="text" name="option_3_D" required="required">
-            <input class="checkbox" type="radio" name="correct_option_3" value="D" required="required">
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="quiz-container">
+                <h1>Create Quiz for {{ subject }}</h1>
+                <form method="post">
+                    <div id="quiz_container">
+                        <!-- Question 1 -->
+                        <div class="question-options">
+                            <h2>Q 1</h2>
+                            <label for="question_1">Question 1:</label>
+                            <input id="question_1" class="question" type="text" name="question_1" required="required">
+                            <div class="option-label">
+                                <label for="option_1_A">Option A:</label>
+                                <input id="option_1_A" class="txt_field" type="text" name="option_1_A" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_1" value="A" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_1_B">Option B:</label>
+                                <input id="option_1_B" class="txt_field" type="text" name="option_1_B" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_1" value="B" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_1_C">Option C:</label>
+                                <input id="option_1_C" class="txt_field" type="text" name="option_1_C" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_1" value="C" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_1_D">Option D:</label>
+                                <input id="option_1_D" class="txt_field" type="text" name="option_1_D" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_1" value="D" required="required">
+                            </div>
+                        </div>
+
+                        <!-- Repeat for other questions -->
+                        <!-- Question 2 -->
+                        <div class="question-options">
+                            <h2>Q 2</h2>
+                            <label for="question_2">Question 2:</label>
+                            <input id="question_2" class="question" type="text" name="question_2" required="required">
+                            <div class="option-label">
+                                <label for="option_2_A">Option A:</label>
+                                <input id="option_2_A" class="txt_field" type="text" name="option_2_A" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_2" value="A" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_2_B">Option B:</label>
+                                <input id="option_2_B" class="txt_field" type="text" name="option_2_B" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_2" value="B" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_2_C">Option C:</label>
+                                <input id="option_2_C" class="txt_field" type="text" name="option_2_C" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_2" value="C" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_2_D">Option D:</label>
+                                <input id="option_2_D" class="txt_field" type="text" name="option_2_D" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_2" value="D" required="required">
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="question-options">
+                            <h2>Q 3</h2>
+                            <label for="question_3">Question 3:</label>
+                            <input id="question_3" class="question" type="text" name="question_3" required="required">
+                            <div class="option-label">
+                                <label for="option_3_A">Option A:</label>
+                                <input id="option_3_A" class="txt_field" type="text" name="option_3_A" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_3" value="A" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_3_B">Option B:</label>
+                                <input id="option_3_B" class="txt_field" type="text" name="option_3_B" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_3" value="B" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_3_C">Option C:</label>
+                                <input id="option_3_C" class="txt_field" type="text" name="option_3_C" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_3" value="C" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_3_D">Option D:</label>
+                                <input id="option_3_D" class="txt_field" type="text" name="option_3_D" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_3" value="D" required="required">
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="question-options">
+                            <h2>Q 4</h2>
+                            <label for="question_4">Question 4:</label>
+                            <input id="question_4" class="question" type="text" name="question_4" required="required">
+                            <div class="option-label">
+                                <label for="option_4_A">Option A:</label>
+                                <input id="option_4_A" class="txt_field" type="text" name="option_4_A" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_4" value="A" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_4_B">Option B:</label>
+                                <input id="option_4_B" class="txt_field" type="text" name="option_4_B" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_4" value="B" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_4_C">Option C:</label>
+                                <input id="option_4_C" class="txt_field" type="text" name="option_4_C" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_4" value="C" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_4_D">Option D:</label>
+                                <input id="option_4_D" class="txt_field" type="text" name="option_4_D" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_4" value="D" required="required">
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="question-options">
+                            <h2>Q 5</h2>
+                            <label for="question_5">Question 5:</label>
+                            <input id="question_5" class="question" type="text" name="question_5" required="required">
+                            <div class="option-label">
+                                <label for="option_5_A">Option A:</label>
+                                <input id="option_5_A" class="txt_field" type="text" name="option_5_A" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_5" value="A" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_5_B">Option B:</label>
+                                <input id="option_5_B" class="txt_field" type="text" name="option_5_B" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_5" value="B" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_5_C">Option C:</label>
+                                <input id="option_5_C" class="txt_field" type="text" name="option_5_C" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_5" value="C" required="required">
+                            </div>
+                            <div class="option-label">
+                                <label for="option_5_D">Option D:</label>
+                                <input id="option_5_D" class="txt_field" type="text" name="option_5_D" required="required">
+                                <input class="checkbox" type="radio" name="correct_option_5" value="D" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="create_quiz_button">
+                        <button type="submit" class="btn btn-primary">Submit Quiz</button>
+                    </div>
+                </form>
+            </div>
         </div>
-		<div class="question_options">
-            <h2>Q 4</h2>
-            <label for="question_4">Question 4: </label>
-            <input id="question_4" class="question" type="text" name="question_4" required="required">
-            <br>
-            <!--Option A-->
-            <label for="option_4_A">Option A: </label>
-            <input id="option_4_A" class="txt_field" type="text" name="option_4_A" required="required">
-            <input class="checkbox" type="radio" name="correct_option_4" value="A" required="required">
-            <!--Option B-->
-            <label for="option_4_B">Option B: </label>
-            <input id="option_4_B" class="txt_field" type="text" name="option_4_B" required="required">
-            <input class="checkbox" type="radio" name="correct_option_4" value="B" required="required">
-            <!--Option C-->
-            <label for="option_4_C">Option C: </label>
-            <input id="option_4_C" class="txt_field" type="text" name="option_4_C" required="required">
-            <input class="checkbox" type="radio" name="correct_option_4" value="C" required="required">
-            <!--Option D-->
-            <label for="option_4_D">Option D: </label>
-            <input id="option_4_D" class="txt_field" type="text" name="option_4_D" required="required">
-            <input class="checkbox" type="radio" name="correct_option_4" value="D" required="required">
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Institute. All rights reserved.</p>
         </div>
-        <div class="question_options">
-            <h2>Q 5</h2>
-            <label for="question_5">Question 5: </label>
-            <input id="question_5" class="question" type="text" name="question_5" required="required">
-            <br>
-            <!--Option A-->
-            <label for="option_5_A">Option A: </label>
-            <input id="option_5_A" class="txt_field" type="text" name="option_5_A" required="required">
-            <input class="checkbox" type="radio" name="correct_option_5" value="A" required="required">
-            <!--Option B-->
-            <label for="option_5_B">Option B: </label>
-            <input id="option_5_B" class="txt_field" type="text" name="option_5_B" required="required">
-            <input class="checkbox" type="radio" name="correct_option_5" value="B" required="required">
-            <!--Option C-->
-            <label for="option_5_C">Option C: </label>
-            <input id="option_5_C" class="txt_field" type="text" name="option_5_C" required="required">
-            <input class="checkbox" type="radio" name="correct_option_5" value="C" required="required">
-            <!--Option D-->
-            <label for="option_5_D">Option D: </label>
-            <input id="option_5_D" class="txt_field" type="text" name="option_5_D" required="required">
-            <input class="checkbox" type="radio" name="correct_option_5" value="D" required="required">
-        </div>
-    </div>
-    <!--Next question/Submit quiz-->
-    <div class="create_quiz_button">
-        <button type="submit" class="btn btn-primary">Submit Quiz</button>
-    </form>
-</div>
+    </footer>
 </body>
 </html>
