@@ -1,0 +1,123 @@
+/* Login page style */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #0000A3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header img {
+    max-height: 50px; /* Adjust height as necessary */
+}
+
+#loginframe {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.logininfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logininfo label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.logininfo input[type="text"],
+.logininfo input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.logininfo button {
+    width: 100%;
+    background-color: #0067B3;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.logininfo button:hover {
+    background-color: #004f8a;
+}
+
+.logininfo label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#cp_name {
+    color: #FFD53D;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0000A3;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    header, footer {
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        margin-top: 10px;
+    }
+
+    #loginframe {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .logininfo label,
+    .logininfo button {
+        width: 100%;
+    }
+}
