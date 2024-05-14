@@ -1,0 +1,1667 @@
+<html lang="en" data-bs-theme="light">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.122.0">
+        <title>Student Profile</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+        <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+        <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+        <meta name="theme-color" content="#712cf9">
+
+
+        <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+        </style>
+
+        
+        <!-- Custom styles for this template -->
+        <link href="sidebars.css" rel="stylesheet">
+
+    <style>.Yhs0neJe89LIyfkAJoxK {
+    overflow: visible;
+    }
+
+    .Yhs0neJe89LIyfkAJoxK:hover .ZhAn9j0umnIEipjxXmaw {
+    display: block;
+    }
+
+
+    .RA6W6tHqfGIgyq6FvHto {
+    background-color: #5e33bf !important;
+    color: #fff !important;
+    transform: translate3d(0, 0, 0) !important;
+    transition: background-color 0.2s ease-in !important;
+    cursor: pointer;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto .df8AcRGrLBTeGlrI8Kpt svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto .df8AcRGrLBTeGlrI8Kpt svg path:not(.MW1rWF7KNYwKqk4M7BZX) {
+    transition: fill 0.2s ease-out;
+    fill: #fff;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto .df8AcRGrLBTeGlrI8Kpt svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto .df8AcRGrLBTeGlrI8Kpt svg path.zgYLZOdQFmvl1k7yJoFd {
+    fill: transparent;
+    stroke: #fff;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto:hover,
+    .RA6W6tHqfGIgyq6FvHto:focus,
+    .RA6W6tHqfGIgyq6FvHto:focus-within,
+    .RA6W6tHqfGIgyq6FvHto:active {
+    background-color: #fff !important;
+    color: #5e33bf !important;
+    border: 1px solid #5e33bf !important;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto:hover .df8AcRGrLBTeGlrI8Kpt svg,
+    .RA6W6tHqfGIgyq6FvHto:focus .df8AcRGrLBTeGlrI8Kpt svg,
+    .RA6W6tHqfGIgyq6FvHto:focus-within .df8AcRGrLBTeGlrI8Kpt svg,
+    .RA6W6tHqfGIgyq6FvHto:active .df8AcRGrLBTeGlrI8Kpt svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto:hover .df8AcRGrLBTeGlrI8Kpt svg path:not(.MW1rWF7KNYwKqk4M7BZX),
+    .RA6W6tHqfGIgyq6FvHto:focus .df8AcRGrLBTeGlrI8Kpt svg path:not(.MW1rWF7KNYwKqk4M7BZX),
+    .RA6W6tHqfGIgyq6FvHto:focus-within .df8AcRGrLBTeGlrI8Kpt svg path:not(.MW1rWF7KNYwKqk4M7BZX),
+    .RA6W6tHqfGIgyq6FvHto:active .df8AcRGrLBTeGlrI8Kpt svg path:not(.MW1rWF7KNYwKqk4M7BZX) {
+    transition: fill 0.2s ease-out;
+    fill: #fff;
+    }
+
+    .RA6W6tHqfGIgyq6FvHto:hover .df8AcRGrLBTeGlrI8Kpt svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:hover .df8AcRGrLBTeGlrI8Kpt svg path.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:focus .df8AcRGrLBTeGlrI8Kpt svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:focus .df8AcRGrLBTeGlrI8Kpt svg path.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:focus-within .df8AcRGrLBTeGlrI8Kpt svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:focus-within .df8AcRGrLBTeGlrI8Kpt svg path.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:active .df8AcRGrLBTeGlrI8Kpt svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .RA6W6tHqfGIgyq6FvHto:active .df8AcRGrLBTeGlrI8Kpt svg path.zgYLZOdQFmvl1k7yJoFd {
+    fill: transparent;
+    stroke: #fff;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV {
+    background-color: #646363 !important;
+    color: #fff !important;
+    transform: translate3d(0, 0, 0) !important;
+    transition: background-color 0.2s ease-in !important;
+    cursor: pointer;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV .QzECqWHsQ0RPsvPBQcPg {
+    background-color: #9d9d9c !important;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV .QzECqWHsQ0RPsvPBQcPg svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV .QzECqWHsQ0RPsvPBQcPg svg path:not(.MW1rWF7KNYwKqk4M7BZX) {
+    transition: fill 0.2s ease-out;
+    fill: #fff;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV .QzECqWHsQ0RPsvPBQcPg svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV .QzECqWHsQ0RPsvPBQcPg svg path.zgYLZOdQFmvl1k7yJoFd {
+    fill: transparent;
+    stroke: #fff;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV:hover,
+    .c8ymIgiX1_X1KsA3H1tV:focus,
+    .c8ymIgiX1_X1KsA3H1tV:focus-within,
+    .c8ymIgiX1_X1KsA3H1tV:active {
+    background-color: #9d9d9c !important;
+    color: #000 !important;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV:hover .QzECqWHsQ0RPsvPBQcPg svg,
+    .c8ymIgiX1_X1KsA3H1tV:focus .QzECqWHsQ0RPsvPBQcPg svg,
+    .c8ymIgiX1_X1KsA3H1tV:focus-within .QzECqWHsQ0RPsvPBQcPg svg,
+    .c8ymIgiX1_X1KsA3H1tV:active .QzECqWHsQ0RPsvPBQcPg svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV:hover .QzECqWHsQ0RPsvPBQcPg svg path:not(.MW1rWF7KNYwKqk4M7BZX),
+    .c8ymIgiX1_X1KsA3H1tV:focus .QzECqWHsQ0RPsvPBQcPg svg path:not(.MW1rWF7KNYwKqk4M7BZX),
+    .c8ymIgiX1_X1KsA3H1tV:focus-within .QzECqWHsQ0RPsvPBQcPg svg path:not(.MW1rWF7KNYwKqk4M7BZX),
+    .c8ymIgiX1_X1KsA3H1tV:active .QzECqWHsQ0RPsvPBQcPg svg path:not(.MW1rWF7KNYwKqk4M7BZX) {
+    transition: fill 0.2s ease-out;
+    fill: #fff;
+    }
+
+    .c8ymIgiX1_X1KsA3H1tV:hover .QzECqWHsQ0RPsvPBQcPg svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:hover .QzECqWHsQ0RPsvPBQcPg svg path.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:focus .QzECqWHsQ0RPsvPBQcPg svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:focus .QzECqWHsQ0RPsvPBQcPg svg path.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:focus-within .QzECqWHsQ0RPsvPBQcPg svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:focus-within .QzECqWHsQ0RPsvPBQcPg svg path.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:active .QzECqWHsQ0RPsvPBQcPg svg circle.zgYLZOdQFmvl1k7yJoFd,
+    .c8ymIgiX1_X1KsA3H1tV:active .QzECqWHsQ0RPsvPBQcPg svg path.zgYLZOdQFmvl1k7yJoFd {
+    fill: transparent;
+    stroke: #fff;
+    }</style><style>.zQ2oI6HGyJr41sAaSN6A {  
+    width: 195px !important;  
+    }
+
+    .CBjZQOrWgjhwajg6cNdt {
+    width: 210px !important;
+    margin-left:10px !important;
+    }
+
+    .yN40z2aRoGZzOKE8ARN3 {
+    position: absolute !important;
+    z-index: 9999999 !important;
+    height: 126px;
+    padding: 10px !important;
+    color: #111 !important;
+    background-color: #f0f0eb !important;
+    border-radius: 4px !important;  
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    -webkit-font-smoothing: antialiased;
+    }
+    .yN40z2aRoGZzOKE8ARN3 * {
+    font-family: inherit;
+    }
+
+    .zQ2oI6HGyJr41sAaSN6A:after {
+    content: "";
+    display: block !important;
+    position: absolute !important;
+    bottom: -5px !important;
+    left: 25% !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin-left: -3px !important;
+    border-top: 6px solid #f0f0eb !important;
+    border-left: 6px solid transparent !important;
+    border-right: 6px solid transparent !important;
+    }
+
+    .CBjZQOrWgjhwajg6cNdt:after {
+    content: "";
+    display: block !important;
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin-left: -3px !important;
+    border-top: 10px solid #f0f0eb !important;
+    border-left: 10px solid transparent !important;
+    border-right: 10px solid transparent !important;
+    }
+
+    .c22rusyRofQicH3i73oO {
+    margin: 0 0 5px;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: #111;
+    }
+
+    .MAtUQwoIbEYN6I2IW3iU {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #111;
+    }
+    .Dzpte9yA2frq_VJhi6CC {
+    margin: 0 !important;
+    padding: 0 !important;
+    }
+
+    .vCn6PTxk9sBIkF37FZ4Q {
+    display: flex !important;
+    align-items: center !important;
+    color: #111 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.6 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    }
+
+    .qHjXL9KCgUmignnlCgjt {
+    margin-right: 0.5rem !important;
+    margin-top: -3px !important;
+    }
+
+    .qHjXL9KCgUmignnlCgjt svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    }
+
+    .qHjXL9KCgUmignnlCgjt svg path:not(.zFF4AleNIF_4DQ6TA9Ze) {
+    transition: fill 0.2s ease-out;
+    fill: #646363;
+    }
+
+    .qHjXL9KCgUmignnlCgjt svg circle.Dh3ou9W2aVNVDeowSDkG,
+    .qHjXL9KCgUmignnlCgjt svg path.Dh3ou9W2aVNVDeowSDkG {
+    fill: transparent;
+    stroke: #646363;
+    }
+
+    .c5TyDaoqniVfBZ_t4fl6 {
+    color: #111 !important;
+    font-weight: 700 !important;
+    }
+
+    .vD1sKbEy4K_sdAhPfoZX {
+    font-weight: 700 !important;
+    }
+
+    .c5TyDaoqniVfBZ_t4fl6 .qHjXL9KCgUmignnlCgjt svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    }
+
+    .c5TyDaoqniVfBZ_t4fl6
+    .qHjXL9KCgUmignnlCgjt
+    svg
+    path:not(.zFF4AleNIF_4DQ6TA9Ze) {
+    transition: fill 0.2s ease-out;
+    fill: #111;
+    }
+
+    .vD1sKbEy4K_sdAhPfoZX
+    .qHjXL9KCgUmignnlCgjt
+    svg
+    path:not(.zFF4AleNIF_4DQ6TA9Ze) {
+    transition: fill 0.2s ease-out;
+    fill: #fff;
+    }
+
+    .c5TyDaoqniVfBZ_t4fl6 .qHjXL9KCgUmignnlCgjt svg circle.Dh3ou9W2aVNVDeowSDkG,
+    .c5TyDaoqniVfBZ_t4fl6 .qHjXL9KCgUmignnlCgjt svg path.Dh3ou9W2aVNVDeowSDkG {
+    fill: transparent;
+    stroke: #fff;
+    }
+
+
+    .kW147OB4sedNGu2d6rGT .qHjXL9KCgUmignnlCgjt circle {
+    animation: 1.4s ease-in-out infinite both Buowibv1_rtZ58hAVORO;
+    display: block;
+    fill: transparent;
+    stroke: #111;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 280;
+    stroke-width: 10px;
+    transform-origin: 50% 50%;
+    }
+
+
+    .TKXFYjyTT7BRVXk2l6uF a {
+        color: #5e33bf;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #5e33bf;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a svg circle.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #5e33bf;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a:hover,
+    .TKXFYjyTT7BRVXk2l6uF a:focus,
+    .TKXFYjyTT7BRVXk2l6uF a:focus-within,
+    .TKXFYjyTT7BRVXk2l6uF a:active {
+        color: #5e33bf;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a:hover svg,
+    .TKXFYjyTT7BRVXk2l6uF a:focus svg,
+    .TKXFYjyTT7BRVXk2l6uF a:focus-within svg,
+    .TKXFYjyTT7BRVXk2l6uF a:active svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .TKXFYjyTT7BRVXk2l6uF a:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .TKXFYjyTT7BRVXk2l6uF a:focus-within svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .TKXFYjyTT7BRVXk2l6uF a:active svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #06512c;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:focus-within svg circle.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:focus-within svg path.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:active svg circle.gZCekxKuewhQhlBZDuJQ,
+    .TKXFYjyTT7BRVXk2l6uF a:active svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #fff;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a:not([href]) {
+        opacity: 0.8;
+        cursor: not-allowed;
+        color: #fff !important;
+    }
+    .TKXFYjyTT7BRVXk2l6uF a.o53g2xMKPHItiQ_Pa50z {
+        color: #fff !important;
+    }
+    
+    .TKXFYjyTT7BRVXk2l6uF > :first-child {
+        margin-top: 0;
+    }
+    .TKXFYjyTT7BRVXk2l6uF > :last-child {
+        margin-bottom: 0;
+    }
+    
+    .N8JKKJ9GMp6XB25A3VK8 {
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-mask-image: radial-gradient(150px at bottom 60px left 290px, transparent 99%, black 100%);
+        mask-image: radial-gradient(150px at bottom 60px left 290px, transparent 99%, black 100%);
+    }
+    
+    .WKlsVvzGQcaszJKQigkg {
+        background-color: rgba(255, 255, 255, 0.8);
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    
+    .NFIyN4kDgBJX4_hCTjAo {
+        -webkit-mask-image: radial-gradient(350px at bottom 60px left 40px, transparent 99%, black 100%);
+        mask-image: radial-gradient(350px at bottom 60px left 40px, transparent 99%, black 100%);
+    }
+    
+    .xsQ_pBk79MDxlAtWKQ1i {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+    
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        min-height: 2.5em;
+        -webkit-transition: none;
+        transition: none;
+        position: relative;
+        overflow: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        vertical-align: middle;
+        padding: 6px 18px;
+        font-family: "Clarivate", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        background-image: none;
+        border-radius: 4px;
+        border: 1px solid #f3f9f6;
+        background-color: #f3f9f6;
+        color: #4a494a;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V svg,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #b0afb0;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #b0afb0;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:hover,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus-within,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:active,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:hover,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus-within,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:active {
+        outline: none;
+        text-decoration: none;
+        color: #4a494a;
+        background-color: #e9f4ee;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:hover svg,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus svg,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus-within svg,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:active svg,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:hover svg,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus svg,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus-within svg,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:active svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus-within svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:active svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus-within svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:active svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #4a494a;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus-within svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:focus-within svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:active svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:active svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus-within svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:focus-within svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:active svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:active svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #5e33bf;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V:disabled,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V:disabled {
+        cursor: not-allowed;
+        opacity: 0.8;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .pOV6BFePmeRb9zzOJ09V svg,
+    .YqtWBHxfSeuDDI4tBtJq .pOV6BFePmeRb9zzOJ09V svg {
+        margin-right: 0.75rem;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .ZFFejwogdbRltBtqgc3n svg,
+    .YqtWBHxfSeuDDI4tBtJq .ZFFejwogdbRltBtqgc3n svg {
+        margin-right: 0;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb {
+        min-height: auto;
+        width: 1.75em;
+        height: 1.75em;
+        margin: 0 0.5rem 0 0;
+        padding: 0;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:hover,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus-within,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:active,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:hover,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus-within,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:active {
+        border: 1px solid #f3f9f6;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .SlU_AzpYh4lpS86_AlqH,
+    .YqtWBHxfSeuDDI4tBtJq .SlU_AzpYh4lpS86_AlqH {
+        width: 100%;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z {
+        border: 0;
+        background-color: #f3f9f6;
+        color: #fff;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z svg,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #fff;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #fff;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:hover,
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:focus,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:hover,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:focus {
+        color: #fff;
+        background-color: #5e33bf;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:hover svg,
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:focus svg,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:hover svg,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:focus svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #fff;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .o53g2xMKPHItiQ_Pa50z:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .o53g2xMKPHItiQ_Pa50z:focus svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #fff;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .jrqth2DBy5Tfn6bolRG3,
+    .YqtWBHxfSeuDDI4tBtJq .jrqth2DBy5Tfn6bolRG3 {
+        padding: 9px 36px;
+        font-size: 21.6px;
+        font-size: 1.2rem;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb {
+        min-height: auto;
+        width: 2.5em;
+        height: 2.5em;
+        margin: 0 0.5rem 0 0;
+        padding: 0;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb svg,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb svg {
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: middle;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #5e33bf;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #5e33bf;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:hover,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus-within,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:active,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:hover,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus-within,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:active {
+        border: 1px solid #5e33bf;
+        background-color: #e9f4ee;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:hover svg,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus svg,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus-within svg,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:active svg,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:hover svg,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus svg,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus-within svg,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:active svg {
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: middle;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus-within svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:active svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus-within svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:active svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #5e33bf;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus-within svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:focus-within svg path.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:active svg circle.gZCekxKuewhQhlBZDuJQ,
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:active svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus-within svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:focus-within svg path.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:active svg circle.gZCekxKuewhQhlBZDuJQ,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:active svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #5e33bf;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb:last-child,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb:last-child {
+        margin-right: 0;
+    }
+    #fj4Y2VBM_jUdoqg8vxxE .x_CwlUpfr3F8cJGqU9wb svg,
+    .YqtWBHxfSeuDDI4tBtJq .x_CwlUpfr3F8cJGqU9wb svg {
+        margin-right: 0;
+    }
+    
+    .WKlsVvzGQcaszJKQigkg {
+        background-color: rgba(255, 255, 255, 0.8);
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    .YqtWBHxfSeuDDI4tBtJq,
+    .y2eGkYbULQmLiDmmsaE_,
+    .G7McxXXrgjal0gygY7go,
+    .cA8Idbs6OA0BSmKw9Tam {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: "Clarivate", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .YqtWBHxfSeuDDI4tBtJq *:before,
+    .y2eGkYbULQmLiDmmsaE_ *:before,
+    .G7McxXXrgjal0gygY7go *:before,
+    .cA8Idbs6OA0BSmKw9Tam *:before,
+    .YqtWBHxfSeuDDI4tBtJq *:after,
+    .y2eGkYbULQmLiDmmsaE_ *:after,
+    .G7McxXXrgjal0gygY7go *:after,
+    .cA8Idbs6OA0BSmKw9Tam *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .eHXvC2pkWtoHh3fOdygK {
+        overflow: hidden !important;
+    }
+    
+    .N7GBO0t9WTd0OozV15Vh {
+        z-index: 70000000 !important;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+        background-color: #dadada;
+        opacity: 0.8;
+    }
+    
+    .xNhUX6MpP3eU4apTCdOF {
+        position: relative;
+        z-index: 80000000 !important;
+    }
+    
+    .YqtWBHxfSeuDDI4tBtJq {
+        position: fixed;
+        bottom: 30px;
+        left: 320px;
+        width: 350px;
+        z-index: 80000000;
+        padding: 15px;
+        background-color: #5e33bf;
+        border: 3px solid #5e33bf;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);
+    }
+    .YqtWBHxfSeuDDI4tBtJq:before,
+    .YqtWBHxfSeuDDI4tBtJq:after {
+        content: "";
+        position: absolute;
+    }
+    
+    .wP_d6sVNjv41TuoIOqgu {
+        top: 20vh;
+        left: 50vw;
+        margin-left: -175px;
+    }
+    
+    .y2eGkYbULQmLiDmmsaE_ {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: fixed;
+        min-width: 350px;
+        min-height: 350px;
+        z-index: 80000000;
+        padding: 15px;
+        background-color: #fff;
+        border: 10px dashed #696969;
+        border-radius: 4px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-align: center;
+    }
+    .y2eGkYbULQmLiDmmsaE_ .MU1OWZXYSl7cGLHsourz {
+        padding-right: 0;
+    }
+    
+    .P8xmsluQbsK9kCB8J4TB:before {
+        top: 50%;
+        right: -50px;
+        width: 50px;
+        margin-top: -5px;
+        border-top: 5px solid #5e33bf;
+        border-bottom: 5px solid #5e33bf;
+    }
+    .P8xmsluQbsK9kCB8J4TB:after {
+        top: 50%;
+        right: -80px;
+        height: 0;
+        width: 0;
+        margin-top: -20px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid #5e33bf;
+    }
+    
+    .G6JUSg1GIC3pcwn4LtwJ:before {
+        top: 25px;
+        right: -50px;
+        width: 50px;
+        border-top: 5px solid #5e33bf;
+        border-bottom: 5px solid #5e33bf;
+    }
+    .G6JUSg1GIC3pcwn4LtwJ:after {
+        top: 10px;
+        right: -80px;
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid #5e33bf;
+    }
+    
+    .TSVTVmbeKDsx1uaA3jwg:before {
+        bottom: 25px;
+        right: -50px;
+        width: 50px;
+        border-top: 5px solid #5e33bf;
+        border-bottom: 5px solid #5e33bf;
+    }
+    .TSVTVmbeKDsx1uaA3jwg:after {
+        bottom: 10px;
+        right: -80px;
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid #5e33bf;
+    }
+    
+    .lXK6keKCXOgkCYRWTuuw:before {
+        top: 50%;
+        left: -50px;
+        width: 50px;
+        margin-top: -5px;
+        border-top: 5px solid #5e33bf;
+        border-bottom: 5px solid #5e33bf;
+    }
+    .lXK6keKCXOgkCYRWTuuw:after {
+        top: 50%;
+        left: -80px;
+        height: 0;
+        width: 0;
+        margin-top: -20px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 30px solid #5e33bf;
+    }
+    
+    .ziKSzAZaZuS7hitu2X8Z:before {
+        top: 25px;
+        left: -50px;
+        width: 50px;
+        border-top: 5px solid #5e33bf;
+        border-bottom: 5px solid #5e33bf;
+    }
+    .ziKSzAZaZuS7hitu2X8Z:after {
+        top: 10px;
+        left: -80px;
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 30px solid #5e33bf;
+    }
+    
+    .quK2DZCe63wsbgp9iUm4:before {
+        bottom: 25px;
+        left: -50px;
+        width: 50px;
+        border-top: 5px solid #5e33bf;
+        border-bottom: 5px solid #5e33bf;
+    }
+    .quK2DZCe63wsbgp9iUm4:after {
+        bottom: 10px;
+        left: -80px;
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 30px solid #5e33bf;
+    }
+    
+    .GrMWkdgGakDmpReMdXtx:before {
+        top: -50px;
+        left: 50%;
+        height: 50px;
+        margin-left: -5px;
+        border-left: 5px solid #5e33bf;
+        border-right: 5px solid #5e33bf;
+    }
+    .GrMWkdgGakDmpReMdXtx:after {
+        left: 50%;
+        top: -80px;
+        height: 0;
+        width: 0;
+        margin-left: -20px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 30px solid #5e33bf;
+    }
+    
+    .YksVyuEMbXSg025JadDh:before {
+        left: 25px;
+        top: -50px;
+        height: 50px;
+        border-left: 5px solid #5e33bf;
+        border-right: 5px solid #5e33bf;
+    }
+    .YksVyuEMbXSg025JadDh:after {
+        left: 10px;
+        top: -80px;
+        height: 0;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 30px solid #5e33bf;
+    }
+    
+    .CTXY9eKXSOcPsREchYI2:before {
+        right: 25px;
+        top: -50px;
+        height: 50px;
+        border-left: 5px solid #5e33bf;
+        border-right: 5px solid #5e33bf;
+    }
+    .CTXY9eKXSOcPsREchYI2:after {
+        right: 10px;
+        top: -80px;
+        height: 0;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 30px solid #5e33bf;
+    }
+    
+    .mV5XjFYui13hlKYiF9fz:before {
+        bottom: -50px;
+        left: 50%;
+        height: 50px;
+        margin-left: -5px;
+        border-left: 5px solid #5e33bf;
+        border-right: 5px solid #5e33bf;
+    }
+    .mV5XjFYui13hlKYiF9fz:after {
+        left: 50%;
+        bottom: -80px;
+        height: 0;
+        width: 0;
+        margin-left: -20px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 30px solid #5e33bf;
+    }
+    
+    .jlXUNrOMfrz8QPtWwi9D:before {
+        bottom: -50px;
+        left: 25px;
+        height: 50px;
+        border-left: 5px solid #5e33bf;
+        border-right: 5px solid #5e33bf;
+    }
+    .jlXUNrOMfrz8QPtWwi9D:after {
+        left: 10px;
+        bottom: -80px;
+        height: 0;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 30px solid #5e33bf;
+    }
+    
+    .JeoJI1NdjwsQC_qBgQws:before {
+        bottom: -50px;
+        right: 25px;
+        height: 50px;
+        border-left: 5px solid #5e33bf;
+        border-right: 5px solid #5e33bf;
+    }
+    .JeoJI1NdjwsQC_qBgQws:after {
+        right: 10px;
+        bottom: -80px;
+        height: 0;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 30px solid #5e33bf;
+    }
+    
+    .MU1OWZXYSl7cGLHsourz {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        padding-right: 85px;
+        font-size: 26px;
+        line-height: 1.25;
+    }
+    
+    .G7McxXXrgjal0gygY7go {
+        min-width: 30px;
+        height: 40px;
+        margin-right: 0.75rem;
+    }
+    .G7McxXXrgjal0gygY7go svg {
+        max-height: 40px;
+        height: auto;
+        width: auto;
+    }
+    
+    .mRKSYTEhLTxmKLYCNnX9 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        min-height: 40px;
+    }
+    
+    .cA8Idbs6OA0BSmKw9Tam {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        margin: 0;
+        padding: 1rem;
+        outline: none;
+        background-color: transparent;
+        color: #fff;
+        font-weight: 400;
+        text-decoration: none;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        cursor: pointer;
+    }
+    .cA8Idbs6OA0BSmKw9Tam svg {
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .cA8Idbs6OA0BSmKw9Tam svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #fff;
+    }
+    .cA8Idbs6OA0BSmKw9Tam svg circle.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #696969;
+    }
+    .cA8Idbs6OA0BSmKw9Tam:hover,
+    .cA8Idbs6OA0BSmKw9Tam:focus,
+    .cA8Idbs6OA0BSmKw9Tam:focus-within,
+    .cA8Idbs6OA0BSmKw9Tam:active {
+        color: #dadada;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .cA8Idbs6OA0BSmKw9Tam:hover svg,
+    .cA8Idbs6OA0BSmKw9Tam:focus svg,
+    .cA8Idbs6OA0BSmKw9Tam:focus-within svg,
+    .cA8Idbs6OA0BSmKw9Tam:active svg {
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .cA8Idbs6OA0BSmKw9Tam:hover svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .cA8Idbs6OA0BSmKw9Tam:focus svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .cA8Idbs6OA0BSmKw9Tam:focus-within svg path:not(.UEpjZcO6H4w0RvC9Kcye),
+    .cA8Idbs6OA0BSmKw9Tam:active svg path:not(.UEpjZcO6H4w0RvC9Kcye) {
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out;
+        fill: #dadada;
+    }
+    .cA8Idbs6OA0BSmKw9Tam:hover svg circle.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:hover svg path.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:focus svg circle.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:focus svg path.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:focus-within svg circle.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:focus-within svg path.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:active svg circle.gZCekxKuewhQhlBZDuJQ,
+    .cA8Idbs6OA0BSmKw9Tam:active svg path.gZCekxKuewhQhlBZDuJQ {
+        fill: transparent;
+        stroke: #5e33bf;
+    }
+    
+    .TKXFYjyTT7BRVXk2l6uF {
+        margin: 15px 0;
+        line-height: 1.25;
+        background: #5e33bf;
+        color: #fff;
+    }
+    .TKXFYjyTT7BRVXk2l6uF:first-of-type,
+    .TKXFYjyTT7BRVXk2l6uF:first-child {
+        margin-top: 0;
+    }
+    .TKXFYjyTT7BRVXk2l6uF:last-child {
+        margin-bottom: 0;
+    }
+    
+    .NnI3UXnyndFcINeMIp0o {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .FV8g2jL10G1UB_eAf9BA {
+        text-align: right;
+    }
+    .FV8g2jL10G1UB_eAf9BA a{
+    color: white;
+    text-decoration: underline;
+    }
+    .FV8g2jL10G1UB_eAf9BA a:hover{
+        color: white;
+        text-decoration: none;
+    }
+    
+    .wwyWCr_3HEEc_JqAydbV {
+        text-align: center;
+    }
+    .z4zawF9GdEBCaptUBX5p {
+        cursor: pointer;
+    }
+    .JcejyBv9JYPL8TJLsJFI {
+        cursor: pointer;
+    }
+    .Mo7gxI5NC9YwGrb2VuBI {
+        position: absolute;
+        width: 273px;
+        bottom: 120px;
+        left: 155px;
+        padding: 15px;
+        border-radius: 2px;
+        background-color: rgba(48, 55, 61, 1);
+        z-index: 500000000;
+    }
+    
+    .h5vXAMG8g9yvOW1B6wro {
+        left: 15px;
+        bottom: 100px;
+    }
+    
+    .h5vXAMG8g9yvOW1B6wro::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        left: 15px;
+        height: 0;
+        border-top: 15px solid #30373d;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+    }
+    
+    .IAiRh1I0k5egyOBwu5xu {
+        bottom: 111px;
+        left: 283px;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background-color: rgba(48, 55, 61, 1);
+    }
+    
+    .SH95mwXWE4rR88NI9kdw {
+        font-family: "Clarivate";
+        text-align: left;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    /* Content visibility */
+    .JDTc_LYE4hywcP2UrMj1 {
+        display: none;
+        height: 100%;
+        -webkit-animation-duration: 500ms;
+        animation-duration: 500ms;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    
+    .JDTc_LYE4hywcP2UrMj1.xt3prUvhYpXaDTATSaqi {
+        display: block;
+        -webkit-animation-name: cyDGHsYvrKbP8e_GTG2d;
+        animation-name: cyDGHsYvrKbP8e_GTG2d;
+    }
+    
+    @keyframes cyDGHsYvrKbP8e_GTG2d {
+        0% {
+        opacity: 0;
+        }
+        100% {
+        opacity: 1;
+        }
+    }
+    
+    #p23dTdp5Vjnb1kKXw0Pm {
+        color: #fff;
+    }
+    
+    #p23dTdp5Vjnb1kKXw0Pm:hover {
+        color: #dadada;
+        text-decoration: none;
+    }
+    </style>
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+        </symbol>
+        </svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+        </symbol>
+        <symbol id="home" viewBox="0 0 16 16">
+            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+        </symbol>
+        <symbol id="speedometer2" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"></path>
+            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"></path>
+        </symbol>
+        <symbol id="table" viewBox="0 0 16 16">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"></path>
+        </symbol>
+        <symbol id="people-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+        </symbol>
+        <symbol id="grid" viewBox="0 0 16 16">
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path>
+        </symbol>
+        </svg>
+
+        <main class="d-flex flex-nowrap">
+
+            <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;  background-color:#0000A3; ">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <img src="../styles/Instatute logo.png" class="bi pe-none me-2" width="40" height="32"/>
+                    <!-- <svg class="bi pe-none me-2" width="40" height="32">
+                        <use xlink:href=""></use>
+                    </svg> -->
+                    <span class="fs-4">  </span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                        Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                        Attempt Quiz
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                        Leader Board
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                        Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                        Customers
+                        </a>
+                    </li> -->
+                </ul>
+                <hr>
+            </div>
+
+            <div class="b-example-divider b-example-vr" style="background-color:#000036;"></div>
+
+            <section class="bg-light">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style=" background-color:#0000A3;">
+                            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                                <img src="../styles/Instatute logo.png" class="bi pe-none me-2" width="40" height="32"/>
+                              <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
+                              <span class="fs-4 text-white">Instatute</span>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-12 mb-4 mb-sm-5">
+                            <div class="card card-style1 border-0" style="background-color:#0000A3;">
+                                <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7 ">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 mb-4 mb-lg-0">
+                                            <img src="{{ image_url }}" alt="..." style="width: 30%;">
+                                            <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                                                <h3 class="h2 text-white mb-0" style="text-align: center;">{{ student_firstname }} {{ student_lastname }}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 px-xl-10">
+                                            <ul class="list-unstyled mb-1-9 text-white">
+                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span> {{ student_firstname }} {{ student_lastname }}</li>
+                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Student ID:</span> {{ student_id }}</li>
+                                                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Points:</span> {{ student_points }}</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="container-fluid pb-3">
+                                <div class="d-grid gap-3" style="grid-template-columns: 1.5fr 2fr; ">
+                                    <div class="col-lg-0 mb-lg-0">
+                                        <div class="bg-body-tertiary border rounded-3">
+                                            <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background-color: #FFD53D;">
+                                                <span class="fs-4" > Statistics</span>
+                                            </div>
+                                            
+                                            <br><br><br><br>
+                                            <div class="container-fluid d-flex flex-column justify-content-center">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="card-header" style="text-align: center;">Leader Board</div>
+                                                            <div class="card-body" style="text-align: center;">
+                                                                <div class="form-group">
+                                                                    #5
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="card-header" style="text-align: center;">Total Points</div>
+                                                            <div class="card-body" style="text-align: center;">
+                                                                <div class="form-group">
+                                                                    {{ student_points }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br><br><br><br><br>
+                                        </div>
+                                        <div class="bg-body-tertiary border rounded-3">
+                                            <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background-color: #FFD53D;">
+                                                <span class="fs-4" > Subjects </span>
+
+                                            </div>
+                                            <br><br><br><br>
+                                            <div class="container-fluid d-flex flex-column justify-content-center">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="form-group">
+                                                                    Maths
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="form-group">
+                                                                    Physics
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br><br><br><br><br>
+                                        </div>
+                                    </div>
+                                  <div class="bg-body-tertiary border rounded-3">
+                                    <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background-color: #FFD53D;">
+                                        <span class="fs-4" > Grades </span>
+                                  </div>
+                                    <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-10">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <h3 class="card-title"> 
+                                                                7 / 10
+                                                            </h3>
+                                                        </div>
+                                                        <div class="col-4 text-end">
+                                                            <div class="form-group">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            Subject
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            Preview
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <br><br>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-10">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <h3 class="card-title"> 
+                                                                9 / 10
+                                                            </h3>
+                                                        </div>
+                                                        <div class="col-4 text-end">
+                                                            <div class="form-group">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            Subject
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            Preview
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br><br>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-10">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <h3 class="card-title"> 
+                                                                8 / 10
+                                                            </h3>
+                                                        </div>
+                                                        <div class="col-4 text-end">
+                                                            <div class="form-group">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            Subject
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            Preview
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script src="sidebars.js"></script>
+
+    </body>
+</html>
