@@ -6,6 +6,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin: Create Account</title>
   <link rel="stylesheet" href="registration_style.css">
+  
+  <style>
+    /* Registration page styles */
+
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    }
+
+    header {
+    background-color: #0000A3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header #cp_name {
+    color: #FFD53D;
+    font-size: 24px;
+    font-weight: bold;
+    }
+
+    #regist {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    }
+
+    .reginfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .reginfo label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    align-self: flex-start;
+    }
+
+    .reginfo input[type="text"],
+    .reginfo input[type="password"],
+    .reginfo select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    }
+
+    .reginfo button {
+    width: 100%;
+    background-color: #0067B3;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    }
+
+    .reginfo button:hover {
+    background-color: #004f8a;
+    }
+
+    .reginfo label input[type="checkbox"] {
+    margin-right: 5px;
+    }
+
+    footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0000A3;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+
+    #regist {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .reginfo label,
+    .reginfo button {
+        width: 100%;
+    }
+    }
+
+  </style>
+  
+  
   <script>
     function updateForm(role) {
       document.getElementById('roleSpecificFields').innerHTML = '';
@@ -67,5 +176,10 @@
     </label>
   </div>
 </form>
+
+<footer>
+    <p>&copy; 2024 Instatute. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
