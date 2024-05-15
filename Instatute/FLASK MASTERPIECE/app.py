@@ -552,7 +552,8 @@ def profile():
                 
             if animal:
                 current_level = animal['current_level']
-                image_filename = f'Cat-{current_level}.png'
+                current_name = animal['animal_name']
+                image_filename = f'{current_name}-{current_level}.png'
                 image_url = url_for('static', filename=f'Avatar pics/{image_filename}')
             else:
                 image_url = url_for('static', filename='Avatar pics/default.jpg')
@@ -569,7 +570,7 @@ def profile():
             # Close cursor and connection
             cursor.close()
             conn.close()
-            return render_template('Profile.html', student_id=student_id, student_firstname=student_firstname, student_lastname=student_lastname, student_points=student_points, image_url=image_url)
+            return render_template('Profile.html', student_id=student_id, student_points=student_points, image_url=image_url)
         else:
             return "Failed to establish connection to the database."
     else:
