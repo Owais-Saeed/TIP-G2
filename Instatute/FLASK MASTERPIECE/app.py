@@ -536,23 +536,26 @@ def profile():
             cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
             user = cursor.fetchone()
             # Fetch student data
-            cursor.execute("SELECT student_id FROM students WHERE user_id = %s", (user_id,))
-            student_id = cursor.fetchone()
             
-            cursor.execute("SELECT first_name FROM students WHERE student_id = %s", (student_id,))
-            student_firstname = cursor.fetchone()
-            student_id = cursor.fetchone()
+            cursor.execute("SELECT * FROM students WHERE user_id = %s", (user_id,))
+            student = cursor.fetchone()
             
-            cursor.execute("SELECT last_name FROM students WHERE student_id = %s", (student_id,))
-            student_lastname = cursor.fetchone()
-            student_id = cursor.fetchone()
-            
-            cursor.execute("SELECT points_earned FROM students WHERE student_id = %s", (student_id,))
-            student_points = cursor.fetchone()
+            if student:
+                student_id = student['student_id']
+                student_firstname = student['first_name']
+                student_lastname = student['last_name']
+                student_points = student['points_earned']
 
             #For the image
-            cursor.execute("SELECT current_level FROM animals WHERE user_id = %s", (user_id,))
-            current_level = cursor.fetchone()
+            cursor.execute("SELECT * FROM animals WHERE animal_id = %s", (student['animal_id'],))
+            animal = cursor.fetchone()
+                
+            if animal:
+                current_level = animal['current_level']
+                image_filename = f'Cat-{current_level}.png'
+                image_url = url_for('static', filename=f'Avatar pics/{image_filename}')
+            else:
+                image_url = url_for('static', filename='Avatar pics/default.jpg')
             
             # cursor.execute("SELECT animal_name FROM animals WHERE user_id = %s", (user_id,))
             # animal_name = cursor.fetchone()
@@ -560,13 +563,13 @@ def profile():
             # image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
             # image_path = os.path.join(image_dir, f'{animal_name}-{current_level}.png')
 
-            image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
-            image_path = os.path.join(image_dir, f'{current_level}-{current_level}.png')
+            # image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
+            # image_path = os.path.join(image_dir, f'Cat-{current_level}.png')
 
             # Close cursor and connection
             cursor.close()
             conn.close()
-            return render_template('profile.html', student_id, student_firstname, student_lastname, student_points, image_url=image_path)
+            return render_template('Profile.html', student_id=student_id, student_firstname=student_firstname, student_lastname=student_lastname, student_points=student_points, image_url=image_url)
         else:
             return "Failed to establish connection to the database."
     else:
