@@ -544,7 +544,23 @@ def profile():
                 student_id = student['student_id']
                 student_firstname = student['first_name']
                 student_lastname = student['last_name']
-                student_points = student['points_earned']
+                # student_points = student['points_earned']
+
+                # Fetch total points from attempts
+                cursor.execute("SELECT SUM(score) AS total_score FROM attempts WHERE student_id = %s", (student_id,))
+                result = cursor.fetchone()
+                total_score = result['total_score'] if result['total_score'] is not None else 0
+                
+                # Update the student's total points
+                student_points = total_score
+
+                cursor.execute("""
+                    SELECT subjects.subject_name 
+                    FROM subjects
+                    JOIN enrollment ON subjects.subject_id = enrollment.subject_id
+                    WHERE enrollment.student_id = %s
+                """, (student_id,))
+                subjects = cursor.fetchall()
 
             #For the image
             cursor.execute("SELECT * FROM animals WHERE animal_id = %s", (student['animal_id'],))
@@ -570,7 +586,7 @@ def profile():
             # Close cursor and connection
             cursor.close()
             conn.close()
-            return render_template('Profile.html', student_id=student_id, student_points=student_points, image_url=image_url)
+            return render_template('Profile.html', student_id=student_id, student_points=student_points, image_url=image_url, subjects=subjects)
         else:
             return "Failed to establish connection to the database."
     else:
