@@ -576,5 +576,13 @@ def profile():
     else:
         return redirect(url_for('login'))  # Redirect to login page if not logged in
 
+@app.route('/logout')
+def logout():
+    # Clear the session data
+    session.clear()
+    # Redirect to the login page
+    return redirect(url_for('login'))
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
