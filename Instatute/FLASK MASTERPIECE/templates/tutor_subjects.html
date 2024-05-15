@@ -139,7 +139,7 @@
             <ul>
                 <li><a href="/tutor_index">Homepage</a></li>
                 <li><a href="/tutor_subjects">Create Quiz</a></li>
-                <li><a href="/leaderboard">Leaderboard</a></li>
+                <li><a href="/tutor_leaderboard">Leaderboard</a></li>
                 <li><a href="/tutor_viewgrades">View Grades</a></li>
             </ul>
         </div>
@@ -147,11 +147,9 @@
 
     <main class="main">
         <div class="container text-center">
-            <div class="position-relative my-5">
-                <img src="/mnt/data/image.png" alt="logo" class="img-fluid" style="width: 300px; height: 300px;">
-            </div>
             <h1 class="mt-4">Select A Subject</h1>
             <div id="subjects">
+                <br>
                 {% for subject in subjects %}
                     <button class="btn btn-warning m-2" onclick="redirectToQuiz('{{ subject[0] }}')">{{ subject[0] }}</button>
                 {% else %}
@@ -163,7 +161,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Institute. All rights reserved.</p>
+            <p>&copy; 2024 Instatute. All rights reserved.</p>
         </div>
     </footer>
 </body>

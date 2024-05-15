@@ -452,30 +452,37 @@ def tutor_viewgrades():
     return render_template('tutor_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
 #student view grades BLOCK
-
-# Route for the student view grades page
+ 
 @app.route('/student_viewgrades', methods=['GET', 'POST'])
 def view_grades():
     if 'user_id' not in session:
         flash('Please log in to access this page.')
         return redirect(url_for('login'))
-
+ 
     user_id = session['user_id']
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-
+ 
+    # Fetch student_id for the logged-in user
+    cursor.execute("SELECT student_id FROM students WHERE user_id = %s", (user_id,))
+    student_data = cursor.fetchone()
+    if not student_data:
+        flash("No student data found.")
+        return redirect(url_for('student_index'))  # or appropriate error handling
+    student_id = student_data['student_id']
+ 
     # Fetch subjects for the dropdown
     cursor.execute("""
         SELECT DISTINCT s.subject_id, s.subject_name
         FROM subjects s
         JOIN enrollment e ON s.subject_id = e.subject_id
         WHERE e.student_id = %s
-    """, (user_id,))
+    """, (student_id,))
     subjects = cursor.fetchall()
-
+ 
     # Get selected subject from GET request
     selected_subject = request.args.get('subject_id')
-
+ 
     # Build the query for attempts based on selected subject
     attempts_query = """
         SELECT a.student_id, q.quiz_name, s.subject_name, a.score
@@ -485,29 +492,29 @@ def view_grades():
         JOIN enrollment e ON s.subject_id = e.subject_id
         WHERE e.student_id = %s
     """
-
+ 
     if selected_subject:
         attempts_query += " AND s.subject_id = %s"
-        cursor.execute(attempts_query, (user_id, selected_subject))
+        cursor.execute(attempts_query, (student_id, selected_subject))
     else:
-        cursor.execute(attempts_query, (user_id,))
-
+        cursor.execute(attempts_query, (student_id,))
+ 
     attempts = cursor.fetchall()
-
+ 
     cursor.close()
     conn.close()
-
+ 
     return render_template('student_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
 
 #student Leaderboard BLOCK
 
-@app.route('/leaderboard')
-def leaderboard():
+@app.route('/student_leaderboard')
+def sleaderboard():
     conn = get_db_connection()
     if conn is None:
         flash("Failed to connect to the database.")
-        return render_template('leaderboard.html', leaderboard=[])
+        return render_template('student_leaderboard.html', leaderboard=[])
  
     cursor = conn.cursor(dictionary=True)
     cursor.execute("""
@@ -521,7 +528,28 @@ def leaderboard():
     cursor.close()
     conn.close()
  
-    return render_template('leaderboard.html', leaderboard=leaderboard)
+    return render_template('student_leaderboard.html', leaderboard=leaderboard)
+
+@app.route('/tutor_leaderboard')
+def tleaderboard():
+    conn = get_db_connection()
+    if conn is None:
+        flash("Failed to connect to the database.")
+        return render_template('tutor_leaderboard.html', leaderboard=[])
+ 
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("""
+        SELECT student_id, SUM(score) AS total_score
+        FROM attempts
+        GROUP BY student_id
+        ORDER BY total_score DESC
+        LIMIT 3
+    """)
+    leaderboard = cursor.fetchall()
+    cursor.close()
+    conn.close()
+ 
+    return render_template('tutor_leaderboard.html', leaderboard=leaderboard)
 
 #Route for student profile
 @app.route('/Profile')

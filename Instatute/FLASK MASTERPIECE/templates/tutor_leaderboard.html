@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Grades</title>
+    <title>Leaderboard</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,6 +15,7 @@
             font-family: Arial, sans-serif;
             background-color: #e6f7ff; /* Very light blue background */
             color: #333;
+            text-align: center;
         }
 
         .container {
@@ -71,50 +72,24 @@
         /* Main Section */
         .main {
             padding: 50px 0;
+        }
+
+        .leaderboard {
             text-align: center;
+            padding: 50px 0;
         }
 
-        .main h1 {
+        .leaderboard h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
             color: #0000A3;
-            margin-bottom: 20px;
-        }
-
-        .main label {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .main select {
-            font-size: 1em;
-            padding: 10px;
-            margin-bottom: 20px;
-            width: 200px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .btn-submit {
-            background-color: #FFD53D; /* Yellow background for the button */
-            color: #0000A3; /* Dark blue text for the button */
-            padding: 10px 20px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .btn-submit:hover {
-            background-color: #40B0DF; /* Light blue background on hover */
-            color: #FFFFFF; /* White text on hover */
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #ffffff; /* White background */
+            margin: 20px auto;
+            background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
@@ -173,45 +148,26 @@
     </nav>
 
     <main class="main">
-        <div class="container">
-            <h1>View Grades</h1>
-            <form action="{{ url_for('tutor_viewgrades') }}" method="get">
-                <label for='subject_id'>Filter by Subject:</label>
-                <select name='subject_id' id='subject_id'>
-                    <option value=''>All Subjects</option>
-                    {% for subject in subjects %}
-                        <option value="{{ subject.subject_id }}" {% if selected_subject == subject.subject_id %}selected{% endif %}>
-                            {{ subject.subject_name }}
-                        </option>
-                    {% endfor %}
-                </select>
-                <input type='submit' value='Filter' class="btn-submit">
-            </form>
-
-            {% if attempts %}
-                <table>
-                    <thead>
+        <div class="container leaderboard">
+            <h2>Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Student ID</th>
+                        <th>Total Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in leaderboard %}
                         <tr>
-                            <th>Student ID</th>
-                            <th>Quiz Name</th>
-                            <th>Subject</th>
-                            <th>Score</th>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ entry.student_id }}</td>
+                            <td>{{ entry.total_score }}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for attempt in attempts %}
-                            <tr>
-                                <td>{{ attempt.student_id }}</td>
-                                <td>{{ attempt.quiz_name }}</td>
-                                <td>{{ attempt.subject_name }}</td>
-                                <td>{{ attempt.score }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            {% else %}
-                <p>No quiz attempts found.</p>
-            {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </main>
 
