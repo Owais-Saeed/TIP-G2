@@ -596,20 +596,29 @@ def profile():
                 
             if animal:
                 current_level = animal['current_level']
+                required_points = animal['required_points_to_level_up']
+                
+                # Check if the student points are enough for level up
+                if student_points >= required_points:
+                    # Increase level and update the required points
+                    new_level = current_level + 1
+                    new_required_points = required_points + 100
+                    
+                    # Update animal level in the database
+                    cursor.execute(
+                        "UPDATE animals SET current_level = %s, required_points_to_level_up = %s WHERE animal_id = %s",
+                        (new_level, new_required_points, student['animal_id'])
+                    )
+                    conn.commit()
+                    current_level = new_level
+                    required_points = new_required_points
+
                 current_name = animal['animal_name']
                 image_filename = f'{current_name}-{current_level}.png'
                 image_url = url_for('static', filename=f'Avatar pics/{image_filename}')
             else:
                 image_url = url_for('static', filename='Avatar pics/default.jpg')
             
-            # cursor.execute("SELECT animal_name FROM animals WHERE user_id = %s", (user_id,))
-            # animal_name = cursor.fetchone()
-
-            # image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
-            # image_path = os.path.join(image_dir, f'{animal_name}-{current_level}.png')
-
-            # image_dir = os.path.join(app.root_path, 'Avatar pics')  # Path to your image directory
-            # image_path = os.path.join(image_dir, f'Cat-{current_level}.png')
 
             # Close cursor and connection
             cursor.close()
