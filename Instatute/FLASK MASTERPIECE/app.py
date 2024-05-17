@@ -595,23 +595,30 @@ def profile():
             animal = cursor.fetchone()
                 
             if animal:
-                current_level = animal['current_level']
-                required_points = animal['required_points_to_level_up']
                 
+                current_level = 1
+
                 # Check if the student points are enough for level up
-                if student_points >= required_points:
+                if student_points >= 100 and student_points<200:
                     # Increase level and update the required points
-                    new_level = current_level + 1
-                    new_required_points = required_points + 100
+                    current_level = 2
+                elif student_points >= 200:
+                    current_level = 3
+                
+                # # Check if the student points are enough for level up
+                # if student_points >= required_points:
+                #     # Increase level and update the required points
+                #     new_level = current_level + 1
+                #     new_required_points = required_points + 100
                     
-                    # Update animal level in the database
-                    cursor.execute(
-                        "UPDATE animals SET current_level = %s, required_points_to_level_up = %s WHERE animal_id = %s",
-                        (new_level, new_required_points, student['animal_id'])
-                    )
-                    conn.commit()
-                    current_level = new_level
-                    required_points = new_required_points
+                #     # Update animal level in the database
+                #     cursor.execute(
+                #         "UPDATE animals SET current_level = %s, required_points_to_level_up = %s WHERE animal_id = %s",
+                #         (new_level, new_required_points, student['animal_id'])
+                #     )
+                #     conn.commit()
+                #     current_level = new_level
+                #     required_points = new_required_points
 
                 current_name = animal['animal_name']
                 image_filename = f'{current_name}-{current_level}.png'
