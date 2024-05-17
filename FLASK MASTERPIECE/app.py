@@ -206,7 +206,7 @@ def tutor_quiz():
             quiz_id = cursor.lastrowid
 
             success = True
-            for i in range(1, 6):  # Assuming 5 questions
+            for i in range(1, 6):  
                 question_text = request.form.get(f'question_{i}')
                 if not question_text:
                     continue
@@ -570,8 +570,6 @@ def profile():
             
             if student:
                 student_id = student['student_id']
-                student_firstname = student['first_name']
-                student_lastname = student['last_name']
                 # student_points = student['points_earned']
 
                 # Fetch total points from attempts
@@ -604,21 +602,6 @@ def profile():
                     current_level = 2
                 elif student_points >= 200:
                     current_level = 3
-                
-                # # Check if the student points are enough for level up
-                # if student_points >= required_points:
-                #     # Increase level and update the required points
-                #     new_level = current_level + 1
-                #     new_required_points = required_points + 100
-                    
-                #     # Update animal level in the database
-                #     cursor.execute(
-                #         "UPDATE animals SET current_level = %s, required_points_to_level_up = %s WHERE animal_id = %s",
-                #         (new_level, new_required_points, student['animal_id'])
-                #     )
-                #     conn.commit()
-                #     current_level = new_level
-                #     required_points = new_required_points
 
                 current_name = animal['animal_name']
                 image_filename = f'{current_name}-{current_level}.png'
