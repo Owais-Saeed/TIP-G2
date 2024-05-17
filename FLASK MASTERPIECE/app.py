@@ -451,7 +451,7 @@ def tutor_viewgrades():
 
     return render_template('tutor_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
-#student view grades BLOCK
+#Student view grades BLOCK
  
 @app.route('/student_viewgrades', methods=['GET', 'POST'])
 def view_grades():
@@ -507,7 +507,7 @@ def view_grades():
     return render_template('student_viewgrades.html', subjects=subjects, attempts=attempts, selected_subject=selected_subject)
 
 
-#student Leaderboard BLOCK
+#Student Leaderboard BLOCK
 
 @app.route('/student_leaderboard')
 def sleaderboard():
@@ -529,6 +529,9 @@ def sleaderboard():
     conn.close()
  
     return render_template('student_leaderboard.html', leaderboard=leaderboard)
+
+
+#Tutor leaderboard BLOCK
 
 @app.route('/tutor_leaderboard')
 def tleaderboard():
